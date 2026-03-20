@@ -1,0 +1,11 @@
+{
+  "event_type": "user_activity",
+  "customer_id": "string",
+  "session_id": "string",
+  "activity_type": "string",
+  "product_id": "string",
+  "page_url": "string",
+  "device_type": "string",
+  "traffic_source": "string",
+  "event_timestamp": "timestamp"
+}

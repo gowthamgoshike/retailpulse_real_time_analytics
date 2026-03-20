@@ -1,0 +1,12 @@
+{
+  "event_type": "transaction",
+  "transaction_id": "string",
+  "order_id": "string",
+  "customer_id": "string",
+  "payment_method": "string",
+  "payment_provider": "string",
+  "transaction_status": "string",
+  "transaction_amount": "float",
+  "currency": "string",
+  "transaction_timestamp": "timestamp"
+}
