@@ -5,34 +5,20 @@ import random
 from kafka import KafkaProducer
 from faker import Faker
 from datetime import datetime
+from config.settings import KAFKA_BROKER, TRANSACTIONS_TOPIC, TRANSACTIONS_INTERVAL
 
 fake = Faker()
 
 producer = KafkaProducer(
-    bootstrap_servers="localhost:9092",
+    bootstrap_servers=KAFKA_BROKER,
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
-topic = "transactions"
-
-payment_methods = [
-    "credit_card",
-    "debit_card",
-    "paypal",
-    "apple_pay",
-    "google_pay"
-]
-
-transaction_status = [
-    "success",
-    "failed",
-    "refund"
-]
-
+payment_methods = ["credit_card", "debit_card", "paypal", "apple_pay", "google_pay"]
+transaction_status = ["success", "failed", "refund"]
 currencies = ["USD"]
 
 while True:
-
     amount = round(random.uniform(10, 500), 2)
 
     event = {
@@ -47,8 +33,6 @@ while True:
         "transaction_timestamp": datetime.utcnow().isoformat()
     }
 
-    producer.send(topic, event)
-
+    producer.send(TRANSACTIONS_TOPIC, event)
     print("Transaction Event Sent:", event)
-
-    time.sleep(7)
+    time.sleep(TRANSACTIONS_INTERVAL)

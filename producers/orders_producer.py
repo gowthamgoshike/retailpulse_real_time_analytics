@@ -5,11 +5,12 @@ import random
 from kafka import KafkaProducer
 from faker import Faker
 from datetime import datetime
+from config.settings import KAFKA_BROKER, ORDERS_TOPIC, ORDERS_INTERVAL
 
 fake = Faker()
 
 producer = KafkaProducer(
-    bootstrap_servers="localhost:9092",
+    bootstrap_servers=KAFKA_BROKER,
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
@@ -21,10 +22,7 @@ products = [
     {"id": "P104", "name": "Laptop Backpack", "category": "Accessories", "price": 49.99}
 ]
 
-topic = "orders"
-
 while True:
-
     product = random.choice(products)
     quantity = random.randint(1,3)
 
@@ -42,8 +40,6 @@ while True:
         "order_timestamp": datetime.utcnow().isoformat()
     }
 
-    producer.send(topic, order_event)
-
+    producer.send(ORDERS_TOPIC, order_event)
     print("Order Event Sent:", order_event)
-
-    time.sleep(5)
+    time.sleep(ORDERS_INTERVAL)

@@ -5,24 +5,16 @@ import random
 from kafka import KafkaProducer
 from faker import Faker
 from datetime import datetime
+from config.settings import KAFKA_BROKER, USER_ACTIVITY_TOPIC, USER_ACTIVITY_INTERVAL
 
 fake = Faker()
 
 producer = KafkaProducer(
-    bootstrap_servers="localhost:9092",
+    bootstrap_servers=KAFKA_BROKER,
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
-topic = "user_activity"
-
-activities = [
-    "homepage_visit",
-    "product_view",
-    "add_to_cart",
-    "checkout",
-    "search"
-]
-
+activities = ["homepage_visit", "product_view", "add_to_cart", "checkout", "search"]
 products = [
     {"id": "P100", "name": "Wireless Mouse"},
     {"id": "P101", "name": "Bluetooth Headphones"},
@@ -35,7 +27,6 @@ devices = ["mobile", "desktop", "tablet"]
 traffic_sources = ["google_ads", "facebook_ads", "organic", "email_campaign"]
 
 while True:
-
     product = random.choice(products)
     activity = random.choice(activities)
 
@@ -52,8 +43,6 @@ while True:
         "activity_timestamp": datetime.utcnow().isoformat()
     }
 
-    producer.send(topic, event)
-
+    producer.send(USER_ACTIVITY_TOPIC, event)
     print("User Activity Event:", event)
-
-    time.sleep(1)
+    time.sleep(USER_ACTIVITY_INTERVAL)
