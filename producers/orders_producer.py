@@ -5,6 +5,10 @@ import random
 from kafka import KafkaProducer
 from faker import Faker
 from datetime import datetime
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from config.settings import KAFKA_BROKER, ORDERS_TOPIC, ORDERS_INTERVAL
 
 fake = Faker()
