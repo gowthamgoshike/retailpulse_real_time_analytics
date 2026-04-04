@@ -1,0 +1,13 @@
+{"timestamp":"2026-04-01T20:27:07.909467Z","level":"info","event":"Stats instance was created in PID 8590 but accessed in PID 8862. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-04-01T20:27:07.911141Z","level":"warning","event":"Could not import pandas. Holidays will not be considered.","logger":"airflow.example_dags.plugins.workday","filename":"workday.py","lineno":41}
+{"timestamp":"2026-04-01T20:27:07.923624Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-04-01T20:27:07.923912Z","level":"info","event":"Filling up the DagBag from /Users/gowthamgoshike/projects/retailpulse_real_time_analytics/airflow/dags/retail_etl.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-04-01T20:27:07.926574Z","level":"warning","event":"The `airflow.operators.python.PythonOperator` attribute is deprecated. Please use `'airflow.providers.standard.operators.python.PythonOperator'`.","category":"DeprecatedImportWarning","filename":"/Users/gowthamgoshike/projects/retailpulse_real_time_analytics/airflow/dags/retail_etl.py","lineno":3,"logger":"py.warnings"}
+{"timestamp":"2026-04-01T20:27:07.936946Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.936994Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.937249Z","level":"info","event":"Current task name:run_transactions_producer","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.937331Z","level":"info","event":"Dag name:retailpulse_etl_streaming_v3","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.938087Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":230}
+{"timestamp":"2026-04-01T20:27:07.945967Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.946021Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-04-01T20:27:07.946206Z","level":"info","event":"Task operator:<Task(PythonOperator): run_transactions_producer>","logger":"task.stdout"}

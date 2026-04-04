@@ -1,0 +1,15 @@
+{"timestamp":"2026-04-04T17:37:21.218398Z","level":"info","event":"Stats instance was created in PID 5086 but accessed in PID 17050. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-04-04T17:37:21.220116Z","level":"warning","event":"Could not import pandas. Holidays will not be considered.","logger":"airflow.example_dags.plugins.workday","filename":"workday.py","lineno":41}
+{"timestamp":"2026-04-04T17:37:21.226992Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-04-04T17:37:21.227283Z","level":"info","event":"Filling up the DagBag from /Users/gowthamgoshike/projects/retailpulse_real_time_analytics/airflow/dags/spark_automate.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-04-04T17:37:21.239531Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:37:21.239605Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:37:21.239679Z","level":"info","event":"Current task name:delay_120","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:37:21.239694Z","level":"info","event":"Dag name:spark_staggered_jobs","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:37:21.240034Z","level":"info","event":"Checking if the delta has elapsed base_time=2026-04-04 17:37:20+00:00, delta=0:02:00","logger":"airflow.task.operators.airflow.providers.standard.sensors.time_delta.TimeDeltaSensor","filename":"time_delta.py","lineno":96}
+{"timestamp":"2026-04-04T17:38:21.241797Z","level":"info","event":"Checking if the delta has elapsed base_time=2026-04-04 17:37:20+00:00, delta=0:02:00","logger":"airflow.task.operators.airflow.providers.standard.sensors.time_delta.TimeDeltaSensor","filename":"time_delta.py","lineno":96}
+{"timestamp":"2026-04-04T17:39:21.242604Z","level":"info","event":"Checking if the delta has elapsed base_time=2026-04-04 17:37:20+00:00, delta=0:02:00","logger":"airflow.task.operators.airflow.providers.standard.sensors.time_delta.TimeDeltaSensor","filename":"time_delta.py","lineno":96}
+{"timestamp":"2026-04-04T17:39:21.242749Z","level":"info","event":"Success criteria met. Exiting.","logger":"airflow.task.operators.airflow.providers.standard.sensors.time_delta.TimeDeltaSensor","filename":"sensor.py","lineno":250}
+{"timestamp":"2026-04-04T17:39:21.255691Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:39:21.255769Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-04-04T17:39:21.256286Z","level":"info","event":"Task operator:<Task(TimeDeltaSensor): delay_120>","logger":"task.stdout"}
